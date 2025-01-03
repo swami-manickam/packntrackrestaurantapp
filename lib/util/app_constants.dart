@@ -198,7 +198,7 @@ class AppConstants {
         languageName: 'Arabic',
         countryCode: 'SA',
         languageCode: 'ar'),
-    LanguageModel(
+    /*LanguageModel(
         imageUrl: Images.spanish,
         languageName: 'Spanish',
         countryCode: 'ES',
@@ -207,7 +207,7 @@ class AppConstants {
         imageUrl: Images.bengali,
         languageName: 'Bengali',
         countryCode: 'BN',
-        languageCode: 'bn'),
+        languageCode: 'bn'),*/
   ];
 
   static const double maxLimitOfFileSentINConversation = 25;
