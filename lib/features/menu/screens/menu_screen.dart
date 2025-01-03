@@ -59,11 +59,11 @@ class MenuScreen extends StatelessWidget {
             icon: Images.disbursementIcon,
             title: 'disbursement'.tr,
             route: RouteHelper.getDisbursementMenuRoute()),
-      MenuModel(
+      /*MenuModel(
           icon: Images.language,
           title: 'language'.tr,
           route: '',
-          isLanguage: true),
+          isLanguage: true),*/
       MenuModel(
         icon: Images.chat,
         title: 'conversation'.tr,

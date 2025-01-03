@@ -8,6 +8,7 @@ import 'package:packntrack_multivendor_restaurant/features/auth/widgets/restaura
 import 'package:packntrack_multivendor_restaurant/features/profile/controllers/profile_controller.dart';
 import 'package:packntrack_multivendor_restaurant/features/splash/controllers/splash_controller.dart';
 import 'package:packntrack_multivendor_restaurant/helper/route_helper.dart';
+import 'package:packntrack_multivendor_restaurant/theme/light_theme.dart';
 import 'package:packntrack_multivendor_restaurant/util/dimensions.dart';
 import 'package:packntrack_multivendor_restaurant/util/images.dart';
 import 'package:packntrack_multivendor_restaurant/util/styles.dart';
@@ -73,6 +74,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     // Image.asset(Images.logoName, width: 100),
                     Text('app_name'.tr,
                         style: robotoBold.copyWith(
+                            color: light.primaryColor,
                             fontSize: Dimensions.fontSizeOverLarge)),
                     const SizedBox(height: Dimensions.paddingSizeExtraLarge),
 
