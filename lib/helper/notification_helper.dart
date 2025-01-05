@@ -214,8 +214,8 @@ class NotificationHelper {
       FlutterLocalNotificationsPlugin fln) async {
     const AndroidNotificationDetails androidPlatformChannelSpecifics =
         AndroidNotificationDetails(
-      'stackfood',
-      'stackfood',
+      'packntrack',
+      'packntrack',
       playSound: true,
       importance: Importance.max,
       priority: Priority.max,
@@ -242,8 +242,8 @@ class NotificationHelper {
     );
     AndroidNotificationDetails androidPlatformChannelSpecifics =
         AndroidNotificationDetails(
-      'stackfood',
-      'stackfood',
+      'packntrack',
+      'packntrack',
       importance: Importance.max,
       styleInformation: bigTextStyleInformation,
       priority: Priority.max,
@@ -278,8 +278,8 @@ class NotificationHelper {
     );
     final AndroidNotificationDetails androidPlatformChannelSpecifics =
         AndroidNotificationDetails(
-      'stackfood',
-      'stackfood',
+      'packntrack',
+      'packntrack',
       largeIcon: FilePathAndroidBitmap(largeIconPath),
       priority: Priority.max,
       playSound: true,

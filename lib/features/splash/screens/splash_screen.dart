@@ -136,12 +136,13 @@ class SplashScreenState extends State<SplashScreen> {
       await Get.find<ProfileController>().getProfile();
       Get.offNamed(RouteHelper.getInitialRoute());
     } else {
-      if (AppConstants.languages.length > 1 &&
+      /*if (AppConstants.languages.length > 1 &&
           Get.find<SplashController>().showIntro()) {
         Get.offNamed(RouteHelper.getLanguageRoute('splash'));
       } else {
         Get.offNamed(RouteHelper.getSignInRoute());
-      }
+      }*/
+      Get.offNamed(RouteHelper.getSignInRoute());
     }
   }
 
