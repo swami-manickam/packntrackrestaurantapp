@@ -284,7 +284,7 @@ class RestaurantController extends GetxController implements GetxService {
         type: restaurant.scheduleAdvanceDineInBookingDurationTimeFormat ?? '',
         shouldUpdate: false);
     _restaurantTagList = [];
-    _restaurantTagList.addAll(restaurant.tags!);
+    _restaurantTagList.addAll(restaurant.tags ?? []);
   }
 
   Future<void> _getCuisineList(List<Cuisine>? cuisines) async {
