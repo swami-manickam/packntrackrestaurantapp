@@ -185,7 +185,7 @@ class AppConstants {
   static const String bluetoothMacAddress = 'bluetooth_mac_address';
   static const String maintenanceModeTopic = 'maintenance_mode_restaurant_app';
   static const String isRestaurantRegister =
-      'stackfood_restaurant_registration';
+      'packntrack_restaurant_registration';
 
   static List<LanguageModel> languages = [
     LanguageModel(
