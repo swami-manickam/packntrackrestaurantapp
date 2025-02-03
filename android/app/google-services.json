@@ -1,13 +1,32 @@
 {
   "project_info": {
-    "project_number": "44679528403",
-    "project_id": "restaurant-app-d7bed",
-    "storage_bucket": "restaurant-app-d7bed.firebasestorage.app"
+    "project_number": "759938294175",
+    "project_id": "packntrack-7da33",
+    "storage_bucket": "packntrack-7da33.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:44679528403:android:20e3cd85fef962ffc07926",
+        "mobilesdk_app_id": "1:759938294175:android:f29655752add7c91379daa",
+        "android_client_info": {
+          "package_name": "com.packntrack.multivendorfoods"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApdWS3PQ8kgfWLLufMamg-W00xvygoEa4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759938294175:android:bc8617c79f6d3a12379daa",
         "android_client_info": {
           "package_name": "com.packntrack.restaurant.admin"
         }
@@ -15,7 +34,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBAS9TL8zYo3-wtVcQwRhxnVxwhYMoRhmM"
+          "current_key": "AIzaSyApdWS3PQ8kgfWLLufMamg-W00xvygoEa4"
         }
       ],
       "services": {

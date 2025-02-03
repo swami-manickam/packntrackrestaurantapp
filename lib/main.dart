@@ -37,10 +37,10 @@ Future<void> main() async {
   if (GetPlatform.isAndroid) {
     await Firebase.initializeApp(
       options: const FirebaseOptions(
-        apiKey: 'AIzaSyBAS9TL8zYo3-wtVcQwRhxnVxwhYMoRhmM',
-        appId: '1:44679528403:android:20e3cd85fef962ffc07926',
-        messagingSenderId: '44679528403',
-        projectId: 'restaurant-app-d7bed',
+        apiKey: 'AIzaSyApdWS3PQ8kgfWLLufMamg-W00xvygoEa4',
+        appId: '1:759938294175:android:f29655752add7c91379daa',
+        messagingSenderId: '759938294175',
+        projectId: 'packntrack-7da33',
       ),
     );
   } else {
