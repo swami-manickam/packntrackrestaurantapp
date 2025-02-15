@@ -1,12 +1,11 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:photo_view/photo_view.dart';
 import 'package:packntrack_multivendor_restaurant/common/widgets/confirmation_dialog_widget.dart';
 import 'package:packntrack_multivendor_restaurant/common/widgets/custom_app_bar_widget.dart';
 import 'package:packntrack_multivendor_restaurant/common/widgets/custom_asset_image_widget.dart';
@@ -42,6 +41,8 @@ import 'package:packntrack_multivendor_restaurant/helper/route_helper.dart';
 import 'package:packntrack_multivendor_restaurant/util/dimensions.dart';
 import 'package:packntrack_multivendor_restaurant/util/images.dart';
 import 'package:packntrack_multivendor_restaurant/util/styles.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:photo_view/photo_view.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class OrderDetailsScreen extends StatefulWidget {
@@ -65,6 +66,8 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen>
   Timer? _timer;
   final TextEditingController _tableNumberController = TextEditingController();
   final TextEditingController _tokenNumberController = TextEditingController();
+
+  final AudioPlayer _audioPlayer = AudioPlayer();
 
   void _startApiCalling() {
     _timer?.cancel();
@@ -104,6 +107,8 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen>
 
     Get.find<OrderController>().getOrderDetails(widget.orderId);
 
+    _checkNotificationAndPlaySound();
+
     _startApiCalling();
   }
 
@@ -120,6 +125,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen>
   void dispose() {
     super.dispose();
 
+    _audioPlayer.dispose();
     WidgetsBinding.instance.removeObserver(this);
 
     _timer?.cancel();
@@ -2701,6 +2707,40 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen>
           );
         },
       );
+
+  void _checkNotificationAndPlaySound() async {
+    try {
+      OrderController orderController = Get.find<OrderController>();
+
+      // Fetch the order details first (ensure API call completes)
+      await orderController.getOrderDetails(widget.orderId);
+
+      // Now access the updated order model
+      OrderModel? controllerOrderModel = orderController.orderModel;
+
+      // Check if order status is "Pending" and play sound
+      if (/*widget.fromNotification &&*/
+          controllerOrderModel != null &&
+              controllerOrderModel.orderStatus == "pending") {
+        await _playNotificationSound();
+      }
+    } catch (e) {
+      print("Error fetching order details: $e");
+    }
+  }
+
+  Future<void> _playNotificationSound() async {
+    try {
+      await _audioPlayer.play(AssetSource('notification.mp3'));
+
+      // Stop audio automatically when playback completes
+      _audioPlayer.onPlayerComplete.listen((event) {
+        _audioPlayer.stop();
+      });
+    } catch (e) {
+      print("Error playing sound: $e");
+    }
+  }
 }
 
 Future<bool> _allowPermission() async {
